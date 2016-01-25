@@ -1,0 +1,970 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{32560CC1-B24D-4DBA-80C0-5BBF53746499}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Cyclone</RootNamespace>
+    <AssemblyName>Cyclone</AssemblyName>
+    <SignManifests>true</SignManifests>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
+    <ManifestCertificateThumbprint>5594B10F141D56230525B228FEF187BE07A9FAB9</ManifestCertificateThumbprint>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
+    <GenerateManifests>false</GenerateManifests>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetZone>LocalIntranet</TargetZone>
+    <ExcludedPermissions>
+    </ExcludedPermissions>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DelaySign>false</DelaySign>
+    <StartupObject>Cyclone.Program</StartupObject>
+    <ManifestTimestampUrl>
+    </ManifestTimestampUrl>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>C:\Documents and Settings\meimei\桌面\tt\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <TargetCulture>zh-CHS</TargetCulture>
+    <ProductName>Khaos Stage Editor</ProductName>
+    <PublisherName>Andrew Fan</PublisherName>
+    <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DockingUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\DockingUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK, Version=1.0.0.0, Culture=neutral, PublicKeyToken=bad199fe84eb3df4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\OpenTK.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenTK.GLControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>lib\OpenTK.GLControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cyclone\alg\win32\Enums.cs" />
+    <Compile Include="Cyclone\alg\win32\NativeMethods.cs" />
+    <Compile Include="Cyclone\ui\anim\Form_MCLib.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MCLib.Designer.cs">
+      <DependentUpon>Form_MCLib.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MImgsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MImgsList.Designer.cs">
+      <DependentUpon>Form_MImgsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MActorsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MActorsList.Designer.cs">
+      <DependentUpon>Form_MActorsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MConfig.Designer.cs">
+      <DependentUpon>Form_MConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MFrameLevel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MFrameLevel.Designer.cs">
+      <DependentUpon>Form_MFrameLevel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\mod\anim\MClipsManager.cs" />
+    <Compile Include="Cyclone\mod\menu\Button.cs" />
+    <Compile Include="Cyclone\mod\menu\DynamicNode.cs" />
+    <Compile Include="Cyclone\mod\menu\MenuConsts.cs" />
+    <Compile Include="Cyclone\mod\menu\Module.cs" />
+    <Compile Include="Cyclone\mod\menu\MovieClip.cs" />
+    <Compile Include="Cyclone\ui\exctl\Page.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyclone\mod\script\ScriptFileElement.cs" />
+    <Compile Include="Cyclone\mod\anim\MAStruct.cs" />
+    <Compile Include="Cyclone\alg\util\Lisence.cs" />
+    <Compile Include="Cyclone\ui\map\Form_CreateAnteType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\Form_CreateAnteType.Designer.cs">
+      <DependentUpon>Form_CreateAnteType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\Form_ConfigAnteType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\Form_ConfigAnteType.Designer.cs">
+      <DependentUpon>Form_ConfigAnteType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\Form_ReplaceAnteType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\Form_ReplaceAnteType.Designer.cs">
+      <DependentUpon>Form_ReplaceAnteType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\alg\image\ColorTable.cs" />
+    <Compile Include="Cyclone\ui\anim\Form_MAnimation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MAnimation.Designer.cs">
+      <DependentUpon>Form_MAnimation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MFrameEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MFrameEdit.Designer.cs">
+      <DependentUpon>Form_MFrameEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MTimeLine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MTimeLine.Designer.cs">
+      <DependentUpon>Form_MTimeLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\mod\anim\MNode.cs" />
+    <Compile Include="Cyclone\ui\image\formatDeal\Form_ImageProcessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\formatDeal\Form_ImageProcessor.designer.cs">
+      <DependentUpon>Form_ImageProcessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\alg\image\PNG24Processor.cs" />
+    <Compile Include="Cyclone\ui\image\formatDeal\Form_ImageZoomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\formatDeal\Form_ImageZoomer.designer.cs">
+      <DependentUpon>Form_ImageZoomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\FormColorBalance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\FormColorBalance.designer.cs">
+      <DependentUpon>FormColorBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\alg\image\HSL\FilterColorToColor.cs" />
+    <Compile Include="Cyclone\alg\image\HSL\HSLColor.cs" />
+    <Compile Include="Cyclone\alg\image\HSL\HSLModifier.cs" />
+    <Compile Include="Cyclone\alg\image\HSL\IFilter.cs" />
+    <Compile Include="Cyclone\alg\image\HSL\IInPlaceFilter.cs" />
+    <Compile Include="Cyclone\ui\misc\Form_PackFiles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\Form_PackFiles.Designer.cs">
+      <DependentUpon>Form_PackFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_ConfigMapObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_ConfigMapObj.Designer.cs">
+      <DependentUpon>SmallDialog_ConfigMapObj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_ZoomClips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_ZoomClips.Designer.cs">
+      <DependentUpon>SmallDialog_ZoomClips.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_Stage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_Stage.Designer.cs">
+      <DependentUpon>SmallDialog_Stage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\prop\SmallDialog_PropertyValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\prop\SmallDialog_PropertyValue.Designer.cs">
+      <DependentUpon>SmallDialog_PropertyValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\prop\SmallDialog_PropertyDefine.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\prop\SmallDialog_PropertyDefine.Designer.cs">
+      <DependentUpon>SmallDialog_PropertyDefine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\mod\script\Properties.cs" />
+    <Compile Include="Cyclone\ui\prop\Form_ProptiesManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\prop\Form_ProptiesManager.Designer.cs">
+      <DependentUpon>Form_ProptiesManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_FunctionsConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_FunctionsConfig.Designer.cs">
+      <DependentUpon>SmallDialog_FunctionsConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_NewVar_String.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_NewVar_String.Designer.cs">
+      <DependentUpon>SmallDialog_NewVar_String.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_NewVar_INT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_NewVar_INT.Designer.cs">
+      <DependentUpon>SmallDialog_NewVar_INT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\mod\script\VarsAndFunctions.cs" />
+    <Compile Include="Cyclone\ui\script\Form_VarsAndFunctions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\Form_VarsAndFunctions.Designer.cs">
+      <DependentUpon>Form_VarsAndFunctions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\Form_Image_Compress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\Form_Image_Compress.Designer.cs">
+      <DependentUpon>Form_Image_Compress.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\Form_Pallete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\Form_Pallete.designer.cs">
+      <DependentUpon>Form_Pallete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\FormHSB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\FormHSB.designer.cs">
+      <DependentUpon>FormHSB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\FormRGB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\image\pallete\FormRGB.designer.cs">
+      <DependentUpon>FormRGB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\exctl\floatPanel\FloatControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\exctl\floatPanel\FloatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowParagraph.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowParagraph.Designer.cs">
+      <DependentUpon>SmallDialog_ShowParagraph.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_MessageBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\script\SmallDialog_MessageBox.Designer.cs">
+      <DependentUpon>SmallDialog_MessageBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\Form_CombineRes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\Form_CombineRes.Designer.cs">
+      <DependentUpon>Form_CombineRes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_History.Designer.cs">
+      <DependentUpon>SmallDialog_History.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_LevelEyes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_LevelEyes.Designer.cs">
+      <DependentUpon>SmallDialog_LevelEyes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_NewTiles_Gfx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_NewTiles_Gfx.Designer.cs">
+      <DependentUpon>SmallDialog_NewTiles_Gfx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_NewTile_Physics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_NewTile_Physics.Designer.cs">
+      <DependentUpon>SmallDialog_NewTile_Physics.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\mod\map\AntetypesManager.cs" />
+    <Compile Include="Cyclone\mod\map\TilePhysicManager.cs" />
+    <Compile Include="Cyclone\mod\map\TileGfxManager.cs" />
+    <Compile Include="Cyclone\ui\map\SmallDialog_NewMap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\map\SmallDialog_NewMap.Designer.cs">
+      <DependentUpon>SmallDialog_NewMap.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\mod\map\MapsManager.cs" />
+    <Compile Include="Cyclone\mod\map\TextsManager.cs" />
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowList.Designer.cs">
+      <DependentUpon>SmallDialog_ShowList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowMessage.Designer.cs">
+      <DependentUpon>SmallDialog_ShowMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\alg\util\Consts.cs" />
+    <Compile Include="Cyclone\mod\UserDoc.cs" />
+    <Compile Include="Cyclone\ui\misc\Form_TextsManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\Form_TextsManager.Designer.cs">
+      <DependentUpon>Form_TextsManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_ExportConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_ExportConfig.Designer.cs">
+      <DependentUpon>SmallDialog_ExportConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Main.Designer.cs">
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_SoftWareInf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\SmallDialog_SoftWareInf.Designer.cs">
+      <DependentUpon>SmallDialog_SoftWareInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_WordEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_WordEdit.Designer.cs">
+      <DependentUpon>SmallDialog_WordEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Cyclone\ui\map\SmallDialog_NewTile_Physics.resx">
+      <DependentUpon>SmallDialog_NewTile_Physics.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\map\SmallDialog_NewMap.resx">
+      <DependentUpon>SmallDialog_NewMap.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\Form_TextsManager.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_TextsManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\SmallDialog_ExportConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SmallDialog_ExportConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\SmallDialog_SoftWareInf.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SmallDialog_SoftWareInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\util\SmallDialog_WordEdit.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SmallDialog_WordEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Cyclone\alg\type\Element.cs" />
+    <Compile Include="Cyclone\alg\util\FileTypeRegister.cs" />
+    <Compile Include="Cyclone\alg\image\IndexImageProcessor.cs" />
+    <Compile Include="Cyclone\alg\util\GraphicsUtil.cs" />
+    <Compile Include="Cyclone\alg\util\IOUtil.cs" />
+    <Compile Include="Cyclone\alg\type\ObjectElement.cs" />
+    <Compile Include="Cyclone\alg\image\ThumbMaker.cs" />
+    <Compile Include="Cyclone\alg\type\ElementArray.cs" />
+    <Compile Include="Cyclone\alg\type\Rect.cs" />
+    <Compile Include="Cyclone\alg\type\RectMaterial.cs" />
+    <Compile Include="Cyclone\alg\type\RectSorter.cs" />
+    <Compile Include="Cyclone\alg\type\SerializeAble.cs" />
+    <Compile Include="Cyclone\alg\util\MiscUtil.cs" />
+    <Compile Include="Cyclone\alg\util\ShowString.cs" />
+    <Compile Include="Cyclone\alg\util\UndoSupport.cs" />
+    <Compile Include="Cyclone\alg\type\ObjectVector.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anchor.png" />
+    <None Include="Resources\gameBg.png" />
+    <None Include="Resources\autoTile.png" />
+    <None Include="Resources\fillCorner.png" />
+    <None Include="Resources\ColorHS.png" />
+    <EmbeddedResource Include="Cyclone\ui\misc\Form_WebBrowser.resx">
+      <DependentUpon>Form_WebBrowser.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\util\SmallDialog_ShowPicture.resx">
+      <DependentUpon>SmallDialog_ShowPicture.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\cursors_move.ico" />
+    <Compile Include="Cyclone\alg\util\XMLOpt.cs" />
+    <Compile Include="Cyclone\mod\anim\MClipElement.cs" />
+    <Compile Include="Cyclone\mod\animimg\MImgElement.cs" />
+    <Compile Include="Cyclone\mod\animimg\MImgsManager.cs" />
+    <Compile Include="Cyclone\alg\opengl\FPS.cs" />
+    <Compile Include="Cyclone\alg\opengl\GLGraphics.cs" />
+    <Compile Include="Cyclone\alg\opengl\GLWorld.cs" />
+    <Compile Include="Cyclone\alg\opengl\LoopThread.cs" />
+    <Compile Include="Cyclone\alg\opengl\TextureImage.cs" />
+    <Compile Include="Cyclone\alg\math\MathUtil.cs" />
+    <Compile Include="Cyclone\alg\math\Matrix3.cs" />
+    <Compile Include="Cyclone\alg\math\Matrix4.cs" />
+    <Compile Include="Cyclone\alg\type\ValueFloat2.cs" />
+    <Compile Include="Cyclone\alg\type\ValueTransform.cs" />
+    <Compile Include="Cyclone\ui\anim\ConstTextureImgs.cs" />
+    <Compile Include="Cyclone\ui\anim\Form_MAnimPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\anim\Form_MAnimPlay.Designer.cs">
+      <DependentUpon>Form_MAnimPlay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\alg\math\Vector2.cs" />
+    <Compile Include="Cyclone\alg\math\Vector3.cs" />
+    <Compile Include="Cyclone\ui\anim\History.cs" />
+    <Compile Include="Cyclone\ui\exctl\TextBoxEX.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\Form_WebBrowser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\misc\Form_WebBrowser.designer.cs">
+      <DependentUpon>Form_WebBrowser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowPicture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cyclone\ui\util\SmallDialog_ShowPicture.Designer.cs">
+      <DependentUpon>SmallDialog_ShowPicture.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resources\cursor_unitMove.ico" />
+    <EmbeddedResource Include="Resources\cursor_unitSelect.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_coner0.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_coner1.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_coner2.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_coner3.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_rotate.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_scale0.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_scale1.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_scale2.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_scale3.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_sherk0.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_sherk1.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_sherk2.ico" />
+    <EmbeddedResource Include="Resources\cursor_trans_sherk3.ico" />
+    <EmbeddedResource Include="Resources\cursor_unitMoveCenter.ico" />
+    <None Include="Resources\align_left.png" />
+    <None Include="Resources\align_HCenter.png" />
+    <None Include="Resources\align_right.png" />
+    <None Include="Resources\align_top.png" />
+    <None Include="Resources\align_VCenter.png" />
+    <None Include="Resources\align_bottom.png" />
+    <None Include="Resources\anchor_00.png" />
+    <None Include="Resources\anchor_01.png" />
+    <None Include="Resources\anchor_02.png" />
+    <None Include="Resources\anchor_10.png" />
+    <None Include="Resources\anchor_11.png" />
+    <None Include="Resources\anchor_12.png" />
+    <None Include="Resources\anchor_20.png" />
+    <None Include="Resources\anchor_21.png" />
+    <None Include="Resources\anchor_22.png" />
+    <None Include="Resources\alignSet_HC.png" />
+    <None Include="Resources\alignSet_VC.png" />
+    <None Include="Resources\changeLevel_Down.png" />
+    <None Include="Resources\changeLevel_Up.png" />
+    <None Include="Resources\help.png" />
+    <None Include="Resources\help_18.png" />
+    <None Include="Resources\help16.png" />
+    <Content Include="Resources\icon.ico" />
+    <None Include="Resources\addItem.png" />
+    <None Include="Resources\flipH.png" />
+    <None Include="Resources\flipV.png" />
+    <None Include="Resources\flipLT2RB.png" />
+    <None Include="Resources\flipRT2LB.png" />
+    <None Include="Resources\flipTrans90.png" />
+    <None Include="Resources\flipTrans180.png" />
+    <None Include="Resources\flipTrans270.png" />
+    <None Include="Resources\display.png" />
+    <None Include="Resources\eyeOn.png" />
+    <None Include="Resources\eyeOff.png" />
+    <None Include="Resources\addItem_C.png" />
+    <None Include="Resources\anim_import.png" />
+    <None Include="Resources\anim_refresh.png" />
+    <None Include="Resources\bug.png" />
+    <None Include="Resources\addFolder.png" />
+    <Content Include="Resources\buttonBg.png" />
+    <None Include="Resources\checkboxbg_001.png" />
+    <Content Include="Resources\cursorStraw.png" />
+    <None Include="Resources\imgOp_add.png" />
+    <None Include="Resources\imgOp_update.png" />
+    <None Include="Resources\imgOp_rename.png" />
+    <None Include="Resources\imgOp_delete.png" />
+    <None Include="Resources\imgOp_moveUp.png" />
+    <None Include="Resources\imgOp_moveDown.png" />
+    <None Include="Resources\imgOp_moveTop.png" />
+    <None Include="Resources\imgOp_sortUp.png" />
+    <None Include="Resources\imgOp_sortDown.png" />
+    <None Include="Resources\imgOp_checkUse.png" />
+    <None Include="Resources\imgOp_moveBottom.png" />
+    <None Include="Resources\imgOp_alpha_set.png" />
+    <None Include="Resources\imgOp_alpha_del.png" />
+    <None Include="Resources\imgOp_pmt_set.png" />
+    <None Include="Resources\imgOp_pmt_del.png" />
+    <None Include="Resources\imgOp_opt_forbbid.png" />
+    <None Include="Resources\imgOp_link.png" />
+    <None Include="Resources\imgOp_unlink.png" />
+    <None Include="Resources\imgOp_linkBrek.png" />
+    <None Include="Resources\imgOp_linkTest.png" />
+    <None Include="Resources\imgOp_combine.png" />
+    <Content Include="Resources\level6.png" />
+    <None Include="Resources\transferClipOff.png" />
+    <None Include="Resources\transferClipOn.png" />
+    <None Include="Resources\movie_cross_16x16.png" />
+    <None Include="Resources\timeLine_LevelFlag.png" />
+    <None Include="Resources\timeLineFlagsBg.png" />
+    <None Include="Resources\level_changeLevelDown.png" />
+    <None Include="Resources\level_changeLevelUp.png" />
+    <None Include="Resources\level_lock_unlocked.png" />
+    <None Include="Resources\level_lock_locked.png" />
+    <None Include="Resources\level_eye_on.png" />
+    <None Include="Resources\level_eye_off.png" />
+    <None Include="Resources\OnionSkin_ModeE.png" />
+    <None Include="Resources\OnionSkin_Diable1.png" />
+    <None Include="Resources\TimeLine_Del.png" />
+    <None Include="Resources\TimeLine_Add.png" />
+    <None Include="Resources\OnionSkin_Mode.png" />
+    <None Include="Resources\OnionSkin_Enable.png" />
+    <None Include="Resources\zoom_out_PV.png" />
+    <None Include="Resources\zoom_in_PV.png" />
+    <None Include="Resources\miror_V.png" />
+    <None Include="Resources\miror_TR.png" />
+    <None Include="Resources\miror_TL.png" />
+    <None Include="Resources\miror_H.png" />
+    <None Include="Resources\relateCanvas.png" />
+    <None Include="Resources\match_H.png" />
+    <None Include="Resources\match_V.png" />
+    <None Include="Resources\scatter_H.png" />
+    <None Include="Resources\scatter_V.png" />
+    <None Include="Resources\transformCenter.png" />
+    <None Include="Resources\transform_reset.png" />
+    <None Include="Resources\transform_rotateCopy.png" />
+    <None Include="Resources\unitTransform.png" />
+    <None Include="Resources\unitCenter.png" />
+    <None Include="Resources\rulerPos.png" />
+    <None Include="Resources\timelinekeyframe.png" />
+    <None Include="Resources\timeLineFrame.png" />
+    <None Include="Resources\timeLineFrameBg.png" />
+    <None Include="Resources\timeLine_Level.png" />
+    <None Include="Resources\timeLine_bottomBg.png" />
+    <None Include="Resources\timeLine_topBg.png" />
+    <None Include="Resources\movie_lock_16x16.png" />
+    <None Include="Resources\movie_eye_16x16.png" />
+    <None Include="Resources\unlock.png" />
+    <None Include="Resources\lock.png" />
+    <EmbeddedResource Include="Resources\cursorAddDel.ico" />
+    <EmbeddedResource Include="Resources\cursorDefault.ico" />
+    <EmbeddedResource Include="Resources\cursorAdd.ico" />
+    <EmbeddedResource Include="Resources\cursorStraw.ico" />
+    <EmbeddedResource Include="Resources\hand.ico" />
+    <None Include="Resources\CenterAcrossHS.png" />
+    <None Include="Resources\DeleteHS.png" />
+    <None Include="Resources\FindNextHS.png" />
+    <None Include="Resources\FindPreHS.png" />
+    <None Include="Resources\replaceAT.png" />
+    <None Include="Resources\findAT.png" />
+    <None Include="Resources\HSB.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\colorAdjustBottom.png" />
+    <None Include="Resources\colorAdjustRight.png" />
+    <None Include="Resources\colorAdjustLeft.png" />
+    <None Include="Resources\colorAdjustTop.png" />
+    <None Include="Resources\colorTableDestTop.png" />
+    <None Include="Resources\colorTableSrcTop.png" />
+    <None Include="Resources\colorTableBottom.png" />
+    <None Include="Resources\colorTableRight.png" />
+    <None Include="Resources\colorTableLeft.png" />
+    <None Include="Resources\es.png" />
+    <None Include="Resources\delete_C.png" />
+    <None Include="Resources\edit_C.png" />
+    <None Include="Resources\fillIn.png" />
+    <None Include="Resources\eraser.png" />
+    <EmbeddedResource Include="Cyclone\ui\map\Form_CreateAnteType.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_CreateAnteType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\map\Form_ConfigAnteType.resx">
+      <DependentUpon>Form_ConfigAnteType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\map\Form_ReplaceAnteType.resx">
+      <DependentUpon>Form_ReplaceAnteType.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MAnimPlay.resx">
+      <DependentUpon>Form_MAnimPlay.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MCLib.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_MCLib.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MImgsList.resx">
+      <DependentUpon>Form_MImgsList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MActorsList.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_MActorsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MAnimation.resx">
+      <DependentUpon>Form_MAnimation.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MConfig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_MConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MFrameEdit.resx">
+      <DependentUpon>Form_MFrameEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MFrameLevel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Form_MFrameLevel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\anim\Form_MTimeLine.resx">
+      <DependentUpon>Form_MTimeLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\image\formatDeal\Form_ImageProcessor.resx">
+      <DependentUpon>Form_ImageProcessor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\image\formatDeal\Form_ImageZoomer.resx">
+      <DependentUpon>Form_ImageZoomer.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\image\pallete\FormColorBalance.resx">
+      <DependentUpon>FormColorBalance.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\Form_PackFiles.resx">
+      <DependentUpon>Form_PackFiles.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\map\SmallDialog_ConfigMapObj.resx">
+      <DependentUpon>SmallDialog_ConfigMapObj.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\SmallDialog_ZoomClips.resx">
+      <DependentUpon>SmallDialog_ZoomClips.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\map\SmallDialog_Stage.resx">
+      <DependentUpon>SmallDialog_Stage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\prop\SmallDialog_PropertyValue.resx">
+      <DependentUpon>SmallDialog_PropertyValue.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\prop\SmallDialog_PropertyDefine.resx">
+      <DependentUpon>SmallDialog_PropertyDefine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\prop\Form_ProptiesManager.resx">
+      <DependentUpon>Form_ProptiesManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\script\SmallDialog_FunctionsConfig.resx">
+      <DependentUpon>SmallDialog_FunctionsConfig.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\script\SmallDialog_NewVar_String.resx">
+      <DependentUpon>SmallDialog_NewVar_String.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\script\SmallDialog_NewVar_INT.resx">
+      <DependentUpon>SmallDialog_NewVar_INT.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\script\Form_VarsAndFunctions.resx">
+      <DependentUpon>Form_VarsAndFunctions.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\image\Form_Image_Compress.resx">
+      <DependentUpon>Form_Image_Compress.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\image\pallete\Form_Pallete.resx">
+      <DependentUpon>Form_Pallete.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\image\pallete\FormHSB.resx">
+      <DependentUpon>FormHSB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\image\pallete\FormRGB.resx">
+      <DependentUpon>FormRGB.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\exctl\floatPanel\FloatForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>FloatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\util\SmallDialog_ShowParagraph.resx">
+      <DependentUpon>SmallDialog_ShowParagraph.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\script\SmallDialog_MessageBox.resx">
+      <DependentUpon>SmallDialog_MessageBox.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\Form_CombineRes.resx">
+      <DependentUpon>Form_CombineRes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\SmallDialog_History.resx">
+      <DependentUpon>SmallDialog_History.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\misc\SmallDialog_LevelEyes.resx">
+      <DependentUpon>SmallDialog_LevelEyes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\map\SmallDialog_NewTiles_Gfx.resx">
+      <DependentUpon>SmallDialog_NewTiles_Gfx.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\eraser.ico" />
+    <None Include="Resources\CopyHS.png" />
+    <None Include="Resources\flipX_C.png" />
+    <None Include="Resources\flipY_C.png" />
+    <None Include="Resources\copy_C.png" />
+    <None Include="Resources\down_C.png" />
+    <None Include="Resources\flipNone.png" />
+    <None Include="Resources\delFolder.png" />
+    <EmbeddedResource Include="Resources\font_0.png" />
+    <EmbeddedResource Include="Resources\font_1.png" />
+    <EmbeddedResource Include="Resources\font_10.png" />
+    <EmbeddedResource Include="Resources\font_2.png" />
+    <EmbeddedResource Include="Resources\font_3.png" />
+    <EmbeddedResource Include="Resources\font_4.png" />
+    <EmbeddedResource Include="Resources\font_5.png" />
+    <EmbeddedResource Include="Resources\font_6.png" />
+    <EmbeddedResource Include="Resources\font_7.png" />
+    <EmbeddedResource Include="Resources\font_8.png" />
+    <EmbeddedResource Include="Resources\font_9.png" />
+    <EmbeddedResource Include="Resources\straw.ico" />
+    <None Include="Resources\straw.png" />
+    <None Include="Resources\spilthGray.png" />
+    <None Include="Resources\infor.png" />
+    <None Include="Resources\moveDown.png" />
+    <None Include="Resources\moveUp.png" />
+    <None Include="Resources\moveRight.png" />
+    <None Include="Resources\moveLeft.png" />
+    <None Include="Resources\use.png" />
+    <None Include="Resources\nameFolder.png" />
+    <None Include="Resources\spilth.png" />
+    <None Include="Resources\information.png" />
+    <None Include="Resources\funnel.png" />
+    <None Include="Resources\refreshScreen.png" />
+    <None Include="Resources\redo.png" />
+    <None Include="Resources\undo.png" />
+    <None Include="Resources\right_C.png" />
+    <None Include="Resources\left_C.png" />
+    <None Include="Resources\Up_C.png" />
+    <None Include="Resources\level5.png" />
+    <None Include="Resources\level4.png" />
+    <None Include="Resources\level3.png" />
+    <None Include="Resources\level2.png" />
+    <None Include="Resources\level1.png" />
+    <None Include="Resources\rotateN_C.png" />
+    <None Include="Resources\rotateP_C.png" />
+    <None Include="Resources\PasteHS.png" />
+    <EmbeddedResource Include="Resources\pencil.ico" />
+    <EmbeddedResource Include="Resources\rectSelect.ico" />
+    <EmbeddedResource Include="Cyclone\ui\util\SmallDialog_ShowList.resx">
+      <DependentUpon>SmallDialog_ShowList.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cyclone\ui\util\SmallDialog_ShowMessage.resx">
+      <DependentUpon>SmallDialog_ShowMessage.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="Resources\pencil.png" />
+    <None Include="Resources\rectSelect.png" />
+    <None Include="Resources\magic.png" />
+    <None Include="Resources\importMapElement.png" />
+    <None Include="Resources\importMapElements.png" />
+    <None Include="Resources\saveHS.png" />
+    <None Include="Resources\openHS.png" />
+    <None Include="Resources\level_event.png" />
+    <None Include="Resources\level_actor.png" />
+    <None Include="Resources\level_structure.png" />
+    <None Include="Resources\level_surface.png" />
+    <None Include="Resources\level_ground.png" />
+    <None Include="Resources\loop.png" />
+    <None Include="Resources\sound.png" />
+    <None Include="Resources\soundDelte.png" />
+    <None Include="Resources\texts.png" />
+    <None Include="Resources\pause.png" />
+    <None Include="Resources\play.png" />
+    <BaseApplicationManifest Include="Properties\app.manifest" />
+    <None Include="Resources\zoomReset_s.png" />
+    <None Include="Resources\zoomOut_s.png" />
+    <None Include="Resources\zoomIn_s.png" />
+    <None Include="Resources\zoomReset.png" />
+    <None Include="Resources\palette.png" />
+    <None Include="Resources\right.png" />
+    <None Include="Resources\left.png" />
+    <None Include="Resources\insert.png" />
+    <None Include="Resources\paste.png" />
+    <None Include="Resources\zoomOut.png" />
+    <None Include="Resources\zoomIn.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\Up.png" />
+    <None Include="Resources\rotateN.png" />
+    <None Include="Resources\rotateP.png" />
+    <None Include="Resources\flipY.png" />
+    <None Include="Resources\flipX.png" />
+    <None Include="Resources\alignCenterV.png" />
+    <None Include="Resources\alignCenterH.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\copy.png" />
+    <None Include="Resources\rulerOff.png" />
+    <None Include="Resources\rulerOn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="AxInterop.WMPLib">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Interop.WMPLib">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Cyclone\ui\menu\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

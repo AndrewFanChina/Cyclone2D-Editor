@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "SetupForKhoas.vdproj", "{7FA299D8-D33F-482D-9893-48142C0BA94B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7FA299D8-D33F-482D-9893-48142C0BA94B}.Debug|Default.ActiveCfg = Debug
+		{7FA299D8-D33F-482D-9893-48142C0BA94B}.Debug|Default.Build.0 = Debug
+		{7FA299D8-D33F-482D-9893-48142C0BA94B}.Release|Default.ActiveCfg = Release
+		{7FA299D8-D33F-482D-9893-48142C0BA94B}.Release|Default.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
